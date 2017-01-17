@@ -8,7 +8,7 @@ source:
     sha256: dd425e886f394098533142652e246b375c8fb4d69246f0ffffcdd63bbbdb39c3
 
 build:
-    number: 1
+    number: 2
     # NOTE : For C++11 builds, vc14/VS 2015 are the only acceptable targets
     # which only Python 3.5 supports. So skip previous Python versions.
     # skip: true                # [win and not py35]
@@ -19,7 +19,11 @@ build:
     detect_binary_files_with_prefix: true
 
 requirements:
-    build:
+  run:
+        - python
+        - openblas
+  build:
+        - swig
         - toolchain
         - cmake >=2.8.6
         - python                  # [win]
