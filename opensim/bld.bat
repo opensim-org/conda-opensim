@@ -2,7 +2,7 @@ mkdir opensim_dependencies_build
 cd .\opensim_dependencies_build
 cmake ..\dependencies^
 	-G"Visual Studio 14 2015 Win64"^
-	-DCMAKE_INSTALL_PREFIX="%PREFIX%"
+	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"
 cmake --build . --config Release -- /maxcpucount:8
 cd .. 
 
@@ -10,13 +10,11 @@ mkdir opensim_build
 cd .\opensim_build
 cmake ..\^
 	-G"Visual Studio 14 2015 Win64"^
-	-DCMAKE_INSTALL_PREFIX="%PREFIX%"^
-	-DOPENSIM_DEPENDENCIES_DIR="%PREFIX%"^
+	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
+	-DOPENSIM_DEPENDENCIES_DIR="%LIBRARY_PREFIX%"^
 	-DBUILD_PYTHON_WRAPPING=ON^
 	-DWITH_BTK=ON
 cmake --build . --target install --config Release -- /maxcpucount:8
 
-cd %PREFIX%
-cd sdk
-cd python
-"%PYTHON%" setup.py install
+cd %LIBRARY_PREFIX%\sdk\python
+"%LIBRARY_PYTHON%" setup.py install
