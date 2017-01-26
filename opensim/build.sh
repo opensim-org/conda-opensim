@@ -26,5 +26,3 @@ cmake ../ \
       -DWITH_BTK=ON
 make -j8
 make install
-
-ln -s 
