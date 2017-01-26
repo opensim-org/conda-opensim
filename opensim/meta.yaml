@@ -22,7 +22,9 @@ requirements:
   run:
         - python
         - openblas
+        - freeglut
         - libgcc                  [not win]
+        - gcc                     [not win]
   build:
         - swig
         - toolchain

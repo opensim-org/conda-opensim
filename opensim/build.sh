@@ -11,8 +11,8 @@ cmake ../dependencies/ \
 make -j8
 cd ..
 
-cp -r $PREFIX/BTK/* $PREFIX/
-cp -r $PREFIX/simbody/* $PREFIX/
+cp -r $PREFIX/BTK/lib/btk-0.4dev/* $PREFIX/lib/
+cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
 
 # TODO: Tests are missing!
 mkdir opensim_build
