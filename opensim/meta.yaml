@@ -12,7 +12,7 @@ source:
     git_rev: b3163b22be7bd4cccd8c073e02dd3abb52867031 #6ba7e6c5ac30484f94c573767d7857b806dbef4a
   
 build:
-    number: 5
+    number: 6
     # NOTE : For C++11 builds, vc14/VS 2015 are the only acceptable targets
     # which only Python 3.5 supports. So skip previous Python versions.
     # skip: true                # [win and not py35]
@@ -22,8 +22,7 @@ build:
     # simbody-visualizer, are corrected.
     detect_binary_files_with_prefix: true
 
-extra:
-  channels:
+channels:
         - defaults
         - conda-forge
 
@@ -33,8 +32,6 @@ requirements:
         - openblas
         - freeglut
         - lapack
-        - libgcc                  [not win]
-        - gcc                     [not win]
   build:
         - swig
         - toolchain
