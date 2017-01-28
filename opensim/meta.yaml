@@ -22,16 +22,11 @@ build:
     # simbody-visualizer, are corrected.
     detect_binary_files_with_prefix: true
 
-channels:
-        - defaults
-        - conda-forge
-
 requirements:
   run:
         - python
         - openblas
         - freeglut
-        - lapack
   build:
         - swig
         - toolchain
