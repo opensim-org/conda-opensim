@@ -17,4 +17,4 @@ cmake ..\^
 cmake --build . --target install --config Release -- /maxcpucount:8
 
 cd %LIBRARY_PREFIX%\sdk\python
-"%LIBRARY_PYTHON%" setup.py install
+%LIBRARY_PYTHON% setup.py install
