@@ -8,11 +8,12 @@ package:
 #    sha256: dd425e886f394098533142652e246b375c8fb4d69246f0ffffcdd63bbbdb39c3
 
 source:
-    git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: b3163b22be7bd4cccd8c073e02dd3abb52867031 #6ba7e6c5ac30484f94c573767d7857b806dbef4a
+     path: /home/kidzik/workspace/opensim-core
+#    git_url: https://github.com/opensim-org/opensim-core.git
+#    git_rev: 399c8d57a779dd5dde2916192f8b92bfc959e269 #beta
   
 build:
-    number: 10
+    number: 12
     # NOTE : For C++11 builds, vc14/VS 2015 are the only acceptable targets
     # which only Python 3.5 supports. So skip previous Python versions.
     # skip: true                # [win and not py35]
@@ -24,14 +25,15 @@ build:
 
 requirements:
   run:
-        - python
+        - python >=3.6
         - openblas
         - freeglut
   build:
         - swig
         - toolchain
         - cmake >=2.8.6
-        - python                  # [win]
+        - python >=3.6
+        # - python                  # [win]
 
 about:
     home: http://opensim.stanford.edu
