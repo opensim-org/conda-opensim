@@ -8,9 +8,9 @@ package:
 #    sha256: dd425e886f394098533142652e246b375c8fb4d69246f0ffffcdd63bbbdb39c3
 
 source:
-     path: /home/kidzik/workspace/opensim-core
-#    git_url: https://github.com/opensim-org/opensim-core.git
-#    git_rev: 399c8d57a779dd5dde2916192f8b92bfc959e269 #beta
+#    path: /home/kidzik/workspace/opensim-core
+    git_url: https://github.com/opensim-org/opensim-core.git
+    git_rev: 399c8d57a779dd5dde2916192f8b92bfc959e269 #beta
   
 build:
     number: 12
@@ -25,14 +25,14 @@ build:
 
 requirements:
   run:
-        - python >=3.6
+        - python
         - openblas
         - freeglut
   build:
         - swig
         - toolchain
         - cmake >=2.8.6
-        - python >=3.6
+        - python
         # - python                  # [win]
 
 about:
