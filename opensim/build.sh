@@ -24,7 +24,7 @@ cmake ../ \
       -DBUILD_PYTHON_WRAPPING=ON \
       -DBUILD_JAVA_WRAPPING=OFF \
       -DPYTHON_VERSION_MAJOR=3 \
-      -DPYTHON_VERSION_MINOR=6 \
+      -DPYTHON_VERSION_MINOR=5 \
       -DWITH_BTK=ON
 make -j8
 make install

@@ -10,10 +10,10 @@ package:
 source:
 #    path: /home/kidzik/workspace/opensim-core
     git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: 399c8d57a779dd5dde2916192f8b92bfc959e269 #beta
+    git_rev: ee337f6482907cb2776cdea610154e3836ebe98a #beta
   
 build:
-    number: 12
+    number: 15
     # NOTE : For C++11 builds, vc14/VS 2015 are the only acceptable targets
     # which only Python 3.5 supports. So skip previous Python versions.
     # skip: true                # [win and not py35]
@@ -30,7 +30,7 @@ requirements:
         - freeglut
   build:
         - swig
-        - toolchain
+        # - toolchain
         - cmake >=2.8.6
         - python
         # - python                  # [win]
