@@ -1,7 +1,7 @@
 mkdir opensim_dependencies_build
 cd .\opensim_dependencies_build
 cmake ..\dependencies^
-	-G"Visual Studio 14 2015 Win64"^
+	-G"Visual Studio 16 2019"^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"
 cmake --build . --config Release -- /maxcpucount:8
 cd .. 
@@ -9,7 +9,7 @@ cd ..
 mkdir opensim_build
 cd .\opensim_build
 cmake ..\^
-	-G"Visual Studio 14 2015 Win64"^
+	-G"Visual Studio 16 2019"^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
 	-DOPENSIM_DEPENDENCIES_DIR="%LIBRARY_PREFIX%"^
 	-DBUILD_PYTHON_WRAPPING=ON^
