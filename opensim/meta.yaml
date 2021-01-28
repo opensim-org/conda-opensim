@@ -25,8 +25,9 @@ requirements:
   build:
         - swig
         - toolchain
-        - cmake >=2.8.6
+        - cmake >=3.15
         - python
+        - numpy
         # - python                  # [win]
 
 about:
