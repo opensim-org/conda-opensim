@@ -1,11 +1,11 @@
 package:
     name: opensim
-    version: "4.2.beta"
+    version: "4.2.0414"
 
 source:
 #    path: /home/kidzik/workspace/opensim-core
     git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: 642235af4d6db20cf5e5ac066d9ee8fbf9a08c4d #4.2
+    git_rev: "dbde45530883b4755f2933a9aa1231975313dd3c"
   
 build:
     number: 12
@@ -27,7 +27,7 @@ requirements:
         - toolchain
         - cmake >=3.15
         - python >=3.7
-        - numpy
+        - numpy >=1.19
         # - python                  # [win]
 
 about:
