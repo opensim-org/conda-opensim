@@ -19,6 +19,6 @@ cmake ..\^
 	-DBUILD_TESTING=OFF
 cmake --build . --target install --config Release -- /maxcpucount:8
 
-cp %LIBRARY_PREFIX%\simbody\bin\simbody-visualizer.exe %PREFIX%\simbody-visualizer.exe
+copy %LIBRARY_PREFIX%\simbody\bin\simbody-visualizer.exe %PREFIX%\simbody-visualizer.exe
 cd %LIBRARY_PREFIX%\sdk\python
 python setup.py install
