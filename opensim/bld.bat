@@ -2,7 +2,8 @@ mkdir opensim_dependencies_build
 cd .\opensim_dependencies_build
 cmake ..\dependencies^
 	-G"Visual Studio 16 2019"^
-	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"
+	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
+	-DSUPERBUILD_ezc3d=ON
 cmake --build . --config Release -- /maxcpucount:8
 cd .. 
 
@@ -13,7 +14,9 @@ cmake ..\^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
 	-DOPENSIM_DEPENDENCIES_DIR="%LIBRARY_PREFIX%"^
 	-DBUILD_PYTHON_WRAPPING=ON^
-	-DWITH_BTK=ON
+	-DOPENSIM_C3D_PARSER=ezc3d^
+	-DOPENSIM_PYTHON_CONDA=ON^
+	-DBUILD_TESTING=OFF
 cmake --build . --target install --config Release -- /maxcpucount:8
 
 cp %LIBRARY_PREFIX%\simbody\bin\simbody-visualizer.exe %PREFIX%\simbody-visualizer.exe

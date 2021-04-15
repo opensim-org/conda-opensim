@@ -7,11 +7,11 @@ mkdir opensim_dependencies_build
 cd opensim_dependencies_build
 cmake ../dependencies/ \
       -DCMAKE_INSTALL_PREFIX="$PREFIX" \
-      -DCMAKE_BUILD_TYPE=Release
+      -DCMAKE_BUILD_TYPE=Release \
+      -DSUPERBUILD_ezc3d=ON
 make -j8
 cd ..
 
-cp -r $PREFIX/BTK/lib/btk-0.4dev/* $PREFIX/lib/
 cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
 
 # TODO: Tests are missing!
@@ -22,9 +22,10 @@ cmake ../ \
       -DCMAKE_BUILD_TYPE=Release \
       -DOPENSIM_DEPENDENCIES_DIR="$PREFIX" \
       -DBUILD_PYTHON_WRAPPING=ON \
-      -DBUILD_JAVA_WRAPPING=OFF \
+      -DOPENSIM_PYTHON_CONDA=ON \
       -DPYTHON_VERSION_MAJOR=3 \
       -DPYTHON_VERSION_MINOR=7 \
-      -DWITH_BTK=ON
+      -DOPENSIM_C3D_PARSER=ezc3d \
+      -DBUILD_TESTING=OFF
 make -j8
 make install
