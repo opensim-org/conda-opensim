@@ -25,7 +25,8 @@ jobs:
       with:
         auto-update-conda: true
         miniconda-version: "latest"
-
+    - name: Install conda-build
+      run: conda install conda-build
     - name: Run build
       #Need numpy to use SWIG numpy typemaps.
       run: conda build opensim
