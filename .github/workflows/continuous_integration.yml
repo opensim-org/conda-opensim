@@ -29,7 +29,7 @@ jobs:
       run: conda install conda-build
     - name: Run build
       #Need numpy to use SWIG numpy typemaps.
-      run: conda build -m C:\conda-opensim\opensim\meta.yaml
+      run: conda build RECIPE_PATH C:\conda-opensim\opensim\
 
   style:
     name: Style
