@@ -16,6 +16,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - uses: actions/checkout@v1
+
     - name: Install Python packages
       uses: actions/setup-python@v2
       with:
