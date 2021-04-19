@@ -33,7 +33,7 @@ jobs:
       #Need numpy to use SWIG numpy typemaps.
       run: |
         chdir $env:GITHUB_WORKSPACE
-        conda build . 
+        conda build . --numpy 1.19
 
   style:
     name: Style
