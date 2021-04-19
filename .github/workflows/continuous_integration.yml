@@ -1,0 +1,49 @@
+name: continuous-integration
+
+# syntax https://help.github.com/en/articles/workflow-syntax-for-github-actions
+on:
+  # Run at 2am every night.
+  schedule:
+    - cron: '0 2 * * *'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  windows:
+    name: Windows
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Install Python packages
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        miniconda-version: "latest"
+
+    - name: Run build
+      #Need numpy to use SWIG numpy typemaps.
+      run: conda build opensim
+
+  style:
+    name: Style
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Check for tabs
+      # Ensure that there are no tabs in source code.
+      # GREP returns 0 (true) if there are any matches, and
+      # we don't want any matches. If there are matches,
+      # print a helpful message, and make the test fail by using "false".
+      # The GREP command here checks for any tab characters in the the files
+      # that match the specified pattern. GREP does not pick up explicit tabs
+      # (e.g., literally a \t in a source file).
+      run: if grep --line-num --recursive --exclude-dir="*dependencies*" --exclude-dir="*snopt*" --include={CMakeLists.txt,*.cpp,*.c,*.h} -P "\t" . ; then echo "Tabs found in the lines shown above. See CONTRIBUTING.md about tabs."; false; fi
