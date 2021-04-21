@@ -1,6 +1,6 @@
 package:
     name: opensim
-    version: "4.2.0414"
+    version: "4-2-0414"
 
 source:
 #    path: /home/kidzik/workspace/opensim-core
