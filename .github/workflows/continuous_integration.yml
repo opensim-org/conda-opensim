@@ -60,7 +60,7 @@ jobs:
       run: conda install conda-build
     - name: Conda build
       run: |
-        chdir $env:GITHUB_WORKSPACE
+        cd $GITHUB_WORKSPACE
         conda build .
  
   style:
