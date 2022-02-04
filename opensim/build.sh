@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-
 # TODO: Dependencies should be separate packages...
 mkdir opensim_dependencies_build
 cd opensim_dependencies_build
@@ -24,7 +22,6 @@ cmake ../ \
       -DBUILD_PYTHON_WRAPPING=ON \
       -DOPENSIM_PYTHON_CONDA=ON \
       -DPYTHON_VERSION_MAJOR=3 \
-      -DPYTHON_VERSION_MINOR=7 \
       -DOPENSIM_C3D_PARSER=ezc3d \
       -DBUILD_TESTING=OFF
 make -j8

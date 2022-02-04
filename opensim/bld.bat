@@ -15,8 +15,9 @@ cmake ..\^
 	-DOPENSIM_DEPENDENCIES_DIR="%LIBRARY_PREFIX%"^
 	-DBUILD_PYTHON_WRAPPING=ON^
 	-DOPENSIM_C3D_PARSER=ezc3d^
-	-DOPENSIM_PYTHON_CONDA=ON^
-	-DBUILD_TESTING=OFF
+	-DOPENSIM_PYTHON_STANDALONE=ON^
+	-DBUILD_TESTING=OFF^
+	-DOPENSIM_PYTHON_CONDA=ON
 cmake --build . --target install --config Release -- /maxcpucount:8
 
 copy %LIBRARY_PREFIX%\simbody\bin\simbody-visualizer.exe %PREFIX%\simbody-visualizer.exe
