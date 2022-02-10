@@ -28,8 +28,8 @@ requirements:
         - freeglut
 
 test:
-  imports:
-    - opensim
+  # imports:
+  #  - opensim
     
 about:
     home: http://opensim.stanford.edu
