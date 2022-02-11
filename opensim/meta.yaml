@@ -17,11 +17,15 @@ build:
 
 requirements:
     build:
+        - toolchain 2.4.0 0
+        - wheel 0.36.2 pyhd3eb1b0_0
         - swig
-        - toolchain
         - cmake >=3.15
         - numpy {{ numpy }}
         - python {{ python }}
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+
     run:
         - python
         - numpy
