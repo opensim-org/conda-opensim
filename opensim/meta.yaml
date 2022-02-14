@@ -10,7 +10,7 @@ build:
     number: 0
     # NOTE : For C++11 builds, vc16/VS 2019 are the only acceptable targets
     features:
-        - vc16                # [win and py38]
+        - vc16                # [win and py39]
     # NOTE : This is needed to ensure the paths to Simbody's binaries, like
     # simbody-visualizer, are corrected.
     detect_binary_files_with_prefix: true
