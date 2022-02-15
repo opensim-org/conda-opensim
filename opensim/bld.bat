@@ -31,6 +31,10 @@ cmake ..\^
 	-DOPENSIM_PYTHON_CONDA=ON
 cmake --build . --target install --config Release -- /maxcpucount:8
 
-copy %LIBRARY_PREFIX%\simbody\bin\simbody-visualizer.exe %PREFIX%\simbody-visualizer.exe
-cd %LIBRARY_PREFIX%\sdk\python
+Rem copy %LIBRARY_PREFIX%\Library\bin\simbody-visualizer.exe %LIBRARY_PREFIX%\simbody-visualizer.exe
+mkdir %LIBRARY_PREFIX%\Lib
+copy %LIBRARY_PREFIX%\Library\sdk\Python  %LIBRARY_PREFIX%\Lib\site-packages
+cd %LIBRARY_PREFIX%\Lib\site-packages
+python setup_win_python38.py
 python setup.py install
+
