@@ -32,9 +32,10 @@ cmake ..\^
 cmake --build . --target install --config Release -- /maxcpucount:8
 
 Rem copy %LIBRARY_PREFIX%\Library\bin\simbody-visualizer.exe %LIBRARY_PREFIX%\simbody-visualizer.exe
-mkdir %LIBRARY_PREFIX%\Lib
-copy %LIBRARY_PREFIX%\Library\sdk\Python  %LIBRARY_PREFIX%\Lib\site-packages
-cd %LIBRARY_PREFIX%\Lib\site-packages
-python setup_win_python38.py
-python setup.py install
+echo "copying from " %LIBRARY_PREFIX%\Library\sdk\Python
+echo "copy to " %LIBRARY_PREFIX%\Lib\site-packages
+Rem copy %LIBRARY_PREFIX%\sdk\Python  %LIBRARY_PREFIX%\..\Lib\site-packages
+Rem cd %LIBRARY_PREFIX%\..\Lib\site-packages
+Rem python setup_win_python38.py
+Rem python setup.py install
 
