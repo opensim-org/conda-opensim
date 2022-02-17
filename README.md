@@ -1,5 +1,5 @@
 # conda-opensim
-Unofficial conda recipe for OpenSim 4.0-alpha
+Unofficial conda recipe for OpenSim 4.2
 
 Usage:
 
@@ -8,4 +8,4 @@ Usage:
     
 For python 3, use the python3 branch and 
 
-    conda build opensim --python 3.5
+    conda build opensim --python 3.7

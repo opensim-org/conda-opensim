@@ -1,0 +1,82 @@
+name: continuous-integration
+
+# syntax https://help.github.com/en/articles/workflow-syntax-for-github-actions
+on:
+  # Run at 2am every night.
+  schedule:
+    - cron: '0 2 * * *'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  windows:
+    name: Windows
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install Python packages
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+        
+    - name: Install numpy
+      #Need numpy to use SWIG numpy typemaps.
+      run: python -m pip install numpy==1.19.3
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        miniconda-version: "latest"
+    - name: Install conda-build
+      run: conda install conda-build
+
+    - name: Conda build
+      run: |
+        chdir $env:GITHUB_WORKSPACE
+        conda build .
+  mac:
+    name: Mac
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install Homebrew packages
+      # Save the gfortran version to a file so we can use it in the cache key.
+      run: |
+        brew install cmake pkgconfig autoconf libtool automake wget pcre doxygen
+        pip3 install numpy==1.19.3
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        miniconda-version: "latest"
+    - name: Install conda-build
+      run: conda install conda-build
+    - name: Conda build
+      run: |
+        cd $GITHUB_WORKSPACE
+        conda build .
+ 
+  style:
+    name: Style
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Check for tabs
+      # Ensure that there are no tabs in source code.
+      # GREP returns 0 (true) if there are any matches, and
+      # we don't want any matches. If there are matches,
+      # print a helpful message, and make the test fail by using "false".
+      # The GREP command here checks for any tab characters in the the files
+      # that match the specified pattern. GREP does not pick up explicit tabs
+      # (e.g., literally a \t in a source file).
+      run: if grep --line-num --recursive --exclude-dir="*dependencies*" --exclude-dir="*snopt*" --include={CMakeLists.txt,*.cpp,*.c,*.h} -P "\t" . ; then echo "Tabs found in the lines shown above. See CONTRIBUTING.md about tabs."; false; fi
