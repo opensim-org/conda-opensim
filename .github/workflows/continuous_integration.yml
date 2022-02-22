@@ -21,11 +21,11 @@ jobs:
     - name: Install Python packages
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: '3.9'
         
     - name: Install numpy
       #Need numpy to use SWIG numpy typemaps.
-      run: python -m pip install numpy==1.19.3
+      run: python -m pip install numpy==1.20
 
     - uses: conda-incubator/setup-miniconda@v2
       with:
@@ -38,30 +38,12 @@ jobs:
       run: |
         chdir $env:GITHUB_WORKSPACE
         conda build .
-  mac:
-    name: Mac
 
-    runs-on: macos-latest
-
-    steps:
-    - uses: actions/checkout@v1
-
-    - name: Install Homebrew packages
-      # Save the gfortran version to a file so we can use it in the cache key.
-      run: |
-        brew install cmake pkgconfig autoconf libtool automake wget pcre doxygen
-        pip3 install numpy==1.19.3
-
-    - uses: conda-incubator/setup-miniconda@v2
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
       with:
-        auto-update-conda: true
-        miniconda-version: "latest"
-    - name: Install conda-build
-      run: conda install conda-build
-    - name: Conda build
-      run: |
-        cd $GITHUB_WORKSPACE
-        conda build .
+        name: opensim-conda-win
+        path: win-64/opensim-4.4-py39np120.tar.bz2
  
   style:
     name: Style
