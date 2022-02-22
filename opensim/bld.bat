@@ -7,16 +7,15 @@ cmake ..\dependencies^
 
 cmake --build . --config Release -- /maxcpucount:8
 cd .. 
-
 mkdir opensim_build
 cd .\opensim_build
 cmake ..\^
 	-G"Visual Studio 16 2019"^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
 	-DOPENSIM_DEPENDENCIES_DIR="%LIBRARY_PREFIX%"^
-	-DCMAKE_INSTALL_INCLUDEDIR="%LIBRARY_PREFIX%/Library/include"^
-	-DCMAKE_INSTALL_LIBDIR="%LIBRARY_PREFIX%/Library/lib"^
-	-DCMAKE_INSTALL_DOCDIR="%LIBRARY_PREFIX%/Library/doc"^
+	-DCMAKE_INSTALL_INCLUDEDIR="%LIBRARY_PREFIX%/include"^
+	-DCMAKE_INSTALL_LIBDIR="%LIBRARY_PREFIX%/lib"^
+	-DCMAKE_INSTALL_DOCDIR="%LIBRARY_PREFIX%/doc"^
 	-DCMAKE_INSTALL_SYSCONFDIR="%LIBRARY_PREFIX%/Library"^
 	-DOPENSIM_INSTALL_PYTHONDIR="%LIBRARY_PREFIX%/Lib/site-packages"^
 	-DOPENSIM_INSTALL_SIMBODYDIR="%LIBRARY_PREFIX%/Library/Simbody"^
@@ -31,11 +30,9 @@ cmake ..\^
 	-DOPENSIM_PYTHON_CONDA=ON
 cmake --build . --target install --config Release -- /maxcpucount:8
 
-Rem copy %LIBRARY_PREFIX%\Library\bin\simbody-visualizer.exe %LIBRARY_PREFIX%\simbody-visualizer.exe
-echo "copying from " %LIBRARY_PREFIX%\Library\sdk\Python
-echo "copy to " %LIBRARY_PREFIX%\Lib\site-packages
-copy %LIBRARY_PREFIX%\Library\sdk\Python  %LIBRARY_PREFIX%\Lib
-cd %LIBRARY_PREFIX%\Lib
-python setup_win_python38.py
-python setup.py install
+Rem move Library\sdk\Python Lib
+move %LIBRARY_PREFIX%\sdk\Python  %LIBRARY_PREFIX%\..\Lib
+Rem cd %SP_DIR%
+Rem python setup_win_python38.py
+Rem python setup.py install
 
