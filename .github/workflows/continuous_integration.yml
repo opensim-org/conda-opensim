@@ -43,7 +43,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: opensim-conda-win
-        path: win-64/opensim-4.4-py39np120.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py39np120.tar.bz2
  
   style:
     name: Style
