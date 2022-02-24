@@ -73,7 +73,7 @@ jobs:
 
     - name: Conda build
       run: |
-        cd $env:GITHUB_WORKSPACE
+        cd $GITHUB_WORKSPACE
         conda build .
 
   style:
