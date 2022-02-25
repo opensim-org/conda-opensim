@@ -3,9 +3,11 @@
 # TODO: Dependencies should be separate packages...
 mkdir opensim_dependencies_build
 cd opensim_dependencies_build
-cmake ../dependencies/ \
+cmake ../dependencies/ -LAH \
       -DCMAKE_INSTALL_PREFIX="$PREFIX" \
       -DCMAKE_BUILD_TYPE=Release \
+      -DOPENSIM_DISABLE_LOG_FILE=ON \
+      -DCMAKE_OSX_DEPLOYMENT_TARGET=10.10 \
       -DSUPERBUILD_ezc3d=ON \
       -DSUPERBUILD_adolc=OFF \
       -DSUPERBUILD_casadi=OFF \
@@ -25,7 +27,6 @@ cmake ../ \
       -DOPENSIM_DEPENDENCIES_DIR="$PREFIX" \
       -DBUILD_PYTHON_WRAPPING=ON \
       -DOPENSIM_PYTHON_CONDA=ON \
-      -DPYTHON_VERSION_MAJOR=3 \
       -DOPENSIM_C3D_PARSER=ezc3d \
       -DBUILD_TESTING=OFF \
       -DTROPTER_WITH_SNOPT=OFF \
