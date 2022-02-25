@@ -2,6 +2,9 @@ python:
     - 3.9
 numpy:
   - 1.20
-
-CONDA_BUILD_SYSROOT:
-  - /opt/MacOSX10.10.sdk        # [osx]
+c_compiler:
+  - vs2019   # [win]
+  - clang # [osx]
+cxx_compiler:
+  - vs2019   # [win]
+  - clangxx # [osx]
