@@ -6,7 +6,6 @@ cd opensim_dependencies_build
 cmake ../dependencies/ -LAH \
       -DCMAKE_INSTALL_PREFIX="$PREFIX" \
       -DCMAKE_BUILD_TYPE=Release \
-      -DOPENSIM_DISABLE_LOG_FILE=ON \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=10.10 \
       -DSUPERBUILD_ezc3d=ON \
       -DSUPERBUILD_adolc=OFF \
@@ -25,7 +24,9 @@ cmake ../ \
       -DCMAKE_INSTALL_PREFIX="$PREFIX" \
       -DCMAKE_BUILD_TYPE=Release \
       -DOPENSIM_DEPENDENCIES_DIR="$PREFIX" \
+      -DCMAKE_OSX_DEPLOYMENT_TARGET=10.10 \
       -DBUILD_PYTHON_WRAPPING=ON \
+      -DOPENSIM_DISABLE_LOG_FILE=ON \
       -DOPENSIM_PYTHON_CONDA=ON \
       -DOPENSIM_C3D_PARSER=ezc3d \
       -DBUILD_TESTING=OFF \
