@@ -1,3 +1,5 @@
+CONDA_BUILD_SYSROOT: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+MACOSX_DEPLOYMENT_TARGET: '10.10'
 python:
     - 3.9
 numpy:
