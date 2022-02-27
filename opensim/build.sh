@@ -1,5 +1,6 @@
 #!/bin/bash
-
+ls /Applications/Xcode_12.4.app/Contents/Developer/Platforms/
+# MacOSX.platform/Developer/SDKs
 # TODO: Dependencies should be separate packages...
 mkdir opensim_dependencies_build
 cd opensim_dependencies_build
