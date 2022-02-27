@@ -33,6 +33,6 @@ cmake --build . --target install --config Release -- /maxcpucount:8
 Rem move Library\sdk\Python Lib
 move %LIBRARY_PREFIX%\sdk\Python  %LIBRARY_PREFIX%\..\Lib
 Rem cd %SP_DIR%
-Rem python setup_win_python38.py
-Rem python setup.py install
+python setup_win_python38.py
+python setup.py install
 
