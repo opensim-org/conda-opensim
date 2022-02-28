@@ -10,5 +10,5 @@ cxx_compiler:
   - vs2019   # [win]
   - clangxx # [osx]
 CONDA_BUILD_SYSROOT:
-  /Applications/Xcode_12.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
 

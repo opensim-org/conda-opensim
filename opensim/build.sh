@@ -1,6 +1,4 @@
 #!/bin/bash
-ls /Applications/Xcode_12.4.app/Contents/Developer/Platforms/
-# MacOSX.platform/Developer/SDKs
 # TODO: Dependencies should be separate packages...
 mkdir opensim_dependencies_build
 cd opensim_dependencies_build
@@ -8,7 +6,7 @@ cmake ../dependencies/ -LAH \
       -DCMAKE_INSTALL_PREFIX="$PREFIX" \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_OSX_SYSROOT=${CONDA_BUILD_SYSROOT} \
-      -DCMAKE_OSX_DEPLOYMENT_TARGET=10.10 \
+      -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 \
       -DSUPERBUILD_ezc3d=ON \
       -DSUPERBUILD_adolc=OFF \
       -DSUPERBUILD_casadi=OFF \
@@ -27,7 +25,7 @@ cmake ../ \
       -DCMAKE_BUILD_TYPE=Release \
       -DOPENSIM_DEPENDENCIES_DIR="$PREFIX" \
       -DCMAKE_OSX_SYSROOT=${CONDA_BUILD_SYSROOT} \
-      -DCMAKE_OSX_DEPLOYMENT_TARGET=10.10 \
+      -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 \
       -DBUILD_PYTHON_WRAPPING=ON \
       -DOPENSIM_DISABLE_LOG_FILE=ON \
       -DOPENSIM_PYTHON_CONDA=ON \
