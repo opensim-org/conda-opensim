@@ -76,7 +76,10 @@ jobs:
         cd $GITHUB_WORKSPACE
         conda build .
 
-  unix:
+
+  ubuntu:
+    name: ubuntu
+
     runs-on: ubuntu-latest
 
     steps:
@@ -86,13 +89,13 @@ jobs:
           auto-update-conda: true
           miniconda-version: "latest"
 
-    - name: Install conda-build
-      run: conda install conda-build
+      - name: Install conda-build
+        run: conda install conda-build
 
-    - name: Conda build
-      run: |
-        cd $GITHUB_WORKSPACE/opensim
-        conda build .
+      - name: Conda build
+        run: |
+          cd $GITHUB_WORKSPACE/opensim
+          conda build .
     
   style:
     name: Style
