@@ -6,11 +6,11 @@ numpy:
 c_compiler:
   - vs2019   # [win]
   - clang # [osx]
-  - gcc 
+  - gcc  # [linux]
 cxx_compiler:
   - vs2019   # [win]
   - clangxx # [osx]
-  - gxx
+  - gxx # [linux]
 CONDA_BUILD_SYSROOT:
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
 
