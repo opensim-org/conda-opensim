@@ -1,5 +1,5 @@
 # conda-opensim
-Unofficial conda recipe for OpenSim 4.2
+Unofficial conda recipe for OpenSim 4.4
 
 Usage:
 
