@@ -76,7 +76,7 @@ jobs:
         cd $GITHUB_WORKSPACE
         conda build .
 
-  linux:
+  unix:
     runs-on: ubuntu-latest
 
     steps:
