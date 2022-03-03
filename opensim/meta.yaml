@@ -39,8 +39,8 @@ requirements:
         - openblas # [not win]
 
 test:
-  #imports:
-  #  - opensim
+  imports:
+    - opensim
     
 about:
     home: http://opensim.stanford.edu
