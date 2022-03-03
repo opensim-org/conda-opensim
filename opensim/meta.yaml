@@ -18,6 +18,8 @@ build:
     detect_binary_files_with_prefix: true
     string: py{{ CONDA_PY }}np{{ CONDA_NPY }}
 requirements:
+    host:
+        - openblas # [not win]
     build:
         - toolchain 2.4.0 0     # [win]
         - wheel 0.36.2 pyhd3eb1b0_0
@@ -27,11 +29,14 @@ requirements:
         - python {{ python }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - openblas # [not win]
+        - make # [not win]
 
     run:
         - python
         - numpy
         - freeglut # [win]
+        - openblas # [not win]
 
 test:
   #imports:
