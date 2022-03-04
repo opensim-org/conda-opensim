@@ -20,7 +20,7 @@ cmake ../dependencies/ -LAH \
 make -j8
 cd ..
 
-#cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
+cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
 
 # TODO: Tests are missing!
 mkdir opensim_build
@@ -32,6 +32,8 @@ cmake ../ \
       -DOPENSIM_DEPENDENCIES_DIR="$PREFIX" \
       -DCMAKE_OSX_SYSROOT=${CONDA_BUILD_SYSROOT} \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 \
+      -DSWIG_DIR=~/swig/share/swig \
+      -DSWIG_EXECUTABLE=~/swig/bin/swig \
       -DBUILD_PYTHON_WRAPPING=ON \
       -DOPENSIM_DISABLE_LOG_FILE=ON \
       -DOPENSIM_C3D_PARSER=ezc3d \
