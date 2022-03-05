@@ -42,8 +42,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: opensim-4.4-py39np120.tar.bz2
-        path: $CONDA/envs/test/conda-bld/win-64/opensim-4.4-py39np120.tar.bz2
+        name: win64-opensim-4.4-py39np120.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py39np120.tar.bz2
    
   mac:
     name: Mac
@@ -107,7 +107,13 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/opensim
           conda build .
-    
+          
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux64-opensim-4.4-py39np120.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py39np120.tar.bz2
+ 
   style:
     name: Style
 

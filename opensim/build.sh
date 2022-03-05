@@ -20,7 +20,7 @@ cmake ../dependencies/ -LAH \
 make -j8
 cd ..
 
-cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
+# cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
 
 # TODO: Tests are missing!
 mkdir opensim_build
