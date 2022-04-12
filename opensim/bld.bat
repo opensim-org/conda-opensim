@@ -3,7 +3,9 @@ cd .\opensim_dependencies_build
 cmake ..\dependencies^
 	-G"Visual Studio 16 2019"^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
-	-DSUPERBUILD_ezc3d=ON
+	-DSUPERBUILD_ezc3d=ON^
+	-DOPENSIM_WITH_TROPTER=ON^
+	-DOPENSIM_WITH_CASADI=ON
 
 cmake --build . --config Release -- /maxcpucount:8
 cd .. 
