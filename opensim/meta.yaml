@@ -6,10 +6,10 @@ package:
 
 source:
     git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: "e31cbd58d5f5194fbbc2b22d1e6c518818f9993a"
+    git_rev: "105b6ce37dde457b8a3e775504f42d6b9685d7ea"
   
 build:
-    number: 1
+    number: 2
     # NOTE : For C++11 builds, vc16/VS 2019 are the only acceptable targets
     features:
         - vc16                # [win and py39]
