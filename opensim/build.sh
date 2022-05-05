@@ -11,7 +11,10 @@ cmake ../dependencies/ -LAH \
       -DSUPERBUILD_docopt=ON \
       -DSUPERBUILD_simbody=ON \
       -DSUPERBUILD_spdlog=ON \
-      -DSUPERBUILD_ezc3d=ON 
+      -DSUPERBUILD_ezc3d=ON \
+      -DOPENSIM_WITH_TROPTER=OFF \
+      -DOPENSIM_WITH_CASADI=OFF
+
 make -j8
 cd ..
 
