@@ -10,9 +10,7 @@ on:
       - '*'
 
 jobs:
-  windows:
-    name: Windows37
-
+  windows37:
     runs-on: windows-2019
 
     steps:
@@ -44,10 +42,8 @@ jobs:
       with:
         name: win64-opensim-4.4-py37np120.tar.bz2
         path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py37np120.tar.bz2
-        
-  windows:
-    name: Windows39
-
+  
+  windows39:
     runs-on: windows-2019
 
     steps:
