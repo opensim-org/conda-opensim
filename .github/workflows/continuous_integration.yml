@@ -108,9 +108,7 @@ jobs:
         conda build .
 
 
-  ubuntu:
-    name: ubuntu
-
+  ubuntu39:
     runs-on: ubuntu-latest
 
     steps:
@@ -144,6 +142,40 @@ jobs:
         with:
           name: linux64-opensim-4.4-py39np120.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py39np120.tar.bz2
+  ubuntu37:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          miniconda-version: "latest"
+
+      - name: Install packages
+        run: sudo apt-get update && sudo apt-get install --yes build-essential libtool autoconf pkg-config gfortran libopenblas-dev liblapack-dev freeglut3-dev libxi-dev libxmu-dev doxygen python3.7 python3-dev python3-numpy python3-setuptools
+
+      - name: Install SWIG
+        run: |
+          mkdir ~/swig-source && cd ~/swig-source
+          wget https://github.com/swig/swig/archive/refs/tags/rel-4.0.2.tar.gz
+          tar xzf rel-4.0.2.tar.gz && cd swig-rel-4.0.2
+          sh autogen.sh && ./configure --prefix=$HOME/swig --disable-ccache
+          make && make -j4 install
+
+      - name: Install conda-build
+        run: conda install conda-build
+
+      - name: Conda build
+        run: |
+          cd $GITHUB_WORKSPACE/opensim
+          conda build .
+          
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: linux64-opensim-4.4-py37np120.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py37np120.tar.bz2
  
   style:
     name: Style
