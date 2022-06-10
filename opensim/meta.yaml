@@ -6,7 +6,7 @@ package:
 
 source:
     git_url: https://github.com/opensim-org/opensim-core.git
-    git_tag: branch_4.4
+    git_rev: branch_4.4
     git_depth: 1
 build:
     number: 2
