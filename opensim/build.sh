@@ -12,8 +12,8 @@ cmake ../dependencies/ -LAH \
       -DSUPERBUILD_simbody=ON \
       -DSUPERBUILD_spdlog=ON \
       -DSUPERBUILD_ezc3d=ON \
-      -DOPENSIM_WITH_TROPTER=OFF \
-      -DOPENSIM_WITH_CASADI=OFF
+      -DOPENSIM_WITH_TROPTER=ON \
+      -DOPENSIM_WITH_CASADI=ON
 
 make -j8
 cd ..
@@ -46,7 +46,7 @@ cmake ../ \
       -DBUILD_API_ONLY=ON \
       -DOPENSIM_BUILD_INDIVIDUAL_APPS_DEFAULT=OFF \
       -DOPENSIM_COPY_DEPENDENCIES=ON \
-      -DOPENSIM_WITH_TROPTER=OFF \
-      -DOPENSIM_WITH_CASADI=OFF
+      -DOPENSIM_WITH_TROPTER=ON \
+      -DOPENSIM_WITH_CASADI=ON
 make -j8
 make install
