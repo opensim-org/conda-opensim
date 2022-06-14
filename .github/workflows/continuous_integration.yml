@@ -139,7 +139,7 @@ jobs:
         conda build .
 
   ubuntu37:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
@@ -173,7 +173,7 @@ jobs:
           name: linux64-opensim-4.4-py37np120.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py37np120.tar.bz2
   ubuntu38:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
@@ -207,7 +207,7 @@ jobs:
           name: linux64-opensim-4.4-py38np120.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py38np120.tar.bz2
   ubuntu39:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v2
