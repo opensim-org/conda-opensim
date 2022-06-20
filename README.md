@@ -1,11 +1,9 @@
 # conda-opensim
-Unofficial conda recipe for OpenSim 4.0-alpha
+Unofficial conda recipe for OpenSim 4.4
 
 Usage:
 
     cd conda-opensim
     conda build opensim
     
-For python 3, use the python3 branch and 
-
-    conda build opensim --python 3.5
+Only python 3 is supported. Default settings/package doesn't include Moco
