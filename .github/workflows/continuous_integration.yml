@@ -198,7 +198,7 @@ jobs:
 
       - name: Conda build
         run: |
-          cd $GITHUB_WORKSPACE/opensim-moco
+          cd $GITHUB_WORKSPACE/opensim
           conda build .
           
       - name: upload artifact
