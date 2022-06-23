@@ -13,6 +13,8 @@ cxx_compiler:
   - vs2019   # [win]
   - clangxx # [osx]
   - gxx # [linux]
+fortran_compiler:
+  - gfortran  # [linux]
 CONDA_BUILD_SYSROOT:
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
 
