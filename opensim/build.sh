@@ -18,6 +18,12 @@ cmake ../dependencies/ -LAH \
 make -j8
 cd ..
 
+
+# Copy dependencies of dependencies to lib
+cp $PREFIX/ipopt/lib/libipopt.so $PREFIX/ipopt/lib/libipopt.so.1 $PREFIX/ipopt/lib/libipopt.so.1.10.8 $PREFIX/ipopt/lib/libcoinmetis.so.1.3.5 $PREFIX/ipopt/lib/libcoinmetis.so.1 $PREFIX/ipopt/lib/libcoinmetis.so $PREFIX/ipopt/lib/libcoinmumps.so.1.6.0 $PREFIX/ipopt/lib/libcoinmumps.so.1 $PREFIX/ipopt/lib/libcoinmumps.so $PREFIX/lib
+cp $PREFIX/colpack/lib/libColPack.so $PREFIX/colpack/lib/libColPack.so.0 $PREFIX/lib
+
+
 # cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
 
 if [ "$(uname)" == "Darwin" ]; then
