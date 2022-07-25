@@ -13,6 +13,7 @@ cxx_compiler:
   - vs2019   # [win]
   - clangxx # [osx]
   - gxx # [linux]
+# Specify compiler versions to match jupyter setup
 c_compiler_version:
   - 7.5.0  # [linux]
 cxx_compiler_version:
