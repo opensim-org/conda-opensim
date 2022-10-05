@@ -15,7 +15,7 @@ build:
     # NOTE : This is needed to ensure the paths to Simbody's binaries, like
     # simbody-visualizer, are corrected.
     detect_binary_files_with_prefix: true
-    string: py{{ CONDA_PY }}np{{ CONDA_NPY }}
+    # string: py{{ CONDA_PY }}np{{ CONDA_NPY }}
 requirements:
     host:
         - openblas # [not win]
@@ -32,8 +32,8 @@ requirements:
         - make # [not win]
 
     run:
-        - python
-        - numpy
+        - python = {{ python }}
+        - numpy >=  {{ numpy }}
         - freeglut # [win]
         - openblas # [not win]
 
