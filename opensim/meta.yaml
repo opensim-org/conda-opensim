@@ -32,8 +32,8 @@ requirements:
         - make # [not win]
 
     run:
-        - python {{ CONDA_PY }}
-        - numpy {{ CONDA_NPY }}
+        - python {{ python }}
+        - numpy {{ numpy }}
         - freeglut # [win]
         - openblas # [not win]
 
