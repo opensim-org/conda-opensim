@@ -40,8 +40,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-4.4-py37np120.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py37np120.tar.bz2
+        name: win64-opensim-moco-4.4-py37np120.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.4-py37np120.tar.bz2
   windows38:
     runs-on: windows-2019
 
@@ -72,8 +72,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-4.4-py38np120.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py38np120.tar.bz2
+        name: win64-opensim-moco-4.4-py38np120.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.4-py38np120.tar.bz2
   windows39:
     runs-on: windows-2019
 
@@ -104,8 +104,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-4.4-py39np120.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py39np120.tar.bz2
+        name: win64-opensim-moco-4.4-py39np120.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.4-py39np120.tar.bz2
    
   mac:
     name: Mac
@@ -172,8 +172,8 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linux64-opensim-4.4-py37np120.tar.bz2
-          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py37np120.tar.bz2
+          name: linux64-opensim-moco-4.4-py37np120.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.4-py37np120.tar.bz2
   ubuntu38:
     runs-on: ubuntu-18.04
 
@@ -206,8 +206,8 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linux64-opensim-4.4-py38np120.tar.bz2
-          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py38np120.tar.bz2
+          name: linux64-opensim-moco-4.4-py38np120.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.4-py38np120.tar.bz2
   ubuntu39:
     runs-on: ubuntu-18.04
 
@@ -240,8 +240,8 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linux64-opensim-4.4-py39np120.tar.bz2
-          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py39np120.tar.bz2
+          name: linux64-opensim-moco-4.4-py39np120.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.4-py39np120.tar.bz2
  
   style:
     name: Style
