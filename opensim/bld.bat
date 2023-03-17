@@ -1,7 +1,7 @@
 mkdir opensim_dependencies_build
 cd .\opensim_dependencies_build
 cmake ..\dependencies^
-	-G"Visual Studio 16 2019"^
+	-G"Visual Studio 17 2022"^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
 	-DSUPERBUILD_ezc3d=ON^
 	-DOPENSIM_WITH_TROPTER=OFF^
@@ -12,7 +12,7 @@ cd ..
 mkdir opensim_build
 cd .\opensim_build
 cmake ..\^
-	-G"Visual Studio 16 2019"^
+	-G"Visual Studio 17 2022"^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
 	-DOPENSIM_DEPENDENCIES_DIR="%LIBRARY_PREFIX%"^
 	-DCMAKE_INSTALL_INCLUDEDIR="%LIBRARY_PREFIX%/include"^
@@ -30,7 +30,7 @@ cmake ..\^
 	-DOPENSIM_WITH_TROPTER=OFF^
 	-DBUILD_TESTING=OFF^
 	-DBUILD_API_EXAMPLES=OFF^
-	-DOPENSIM_BUILD_INDIVIDUAL_APPS=OFF^
+	-DOPENSIM_BUILD_INDIVIDUAL_APPS=ON^
 	-DOPENSIM_PYTHON_CONDA=ON
 cmake --build . --target install --config Release -- /maxcpucount:8
 
