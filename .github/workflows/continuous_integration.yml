@@ -8,7 +8,9 @@ on:
   pull_request:
     branches:
       - '*'
-
+  push:
+    branches:
+      - master
 jobs:
   windows37:
     runs-on: windows-latest
