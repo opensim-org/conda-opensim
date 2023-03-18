@@ -147,10 +147,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
         with:
-          auto-update-conda: true
+          # auto-update-conda: true
           python-version: 3.7
           channels: conda-forge,defaults
-          miniconda-version: "latest"
+          # miniconda-version: "latest"
 
       - name: Install Python packages
         uses: actions/setup-python@v4
