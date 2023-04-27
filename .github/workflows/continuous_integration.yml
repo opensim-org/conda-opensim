@@ -142,7 +142,7 @@ jobs:
         conda build .
 
   ubuntu38:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
@@ -183,7 +183,7 @@ jobs:
           name: linux64-opensim-4.4-py38np120.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py38np120.tar.bz2
   ubuntu39:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
@@ -228,7 +228,7 @@ jobs:
           name: linux64-opensim-4.4-py39np120.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py39np120.tar.bz2
   ubuntu310:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
@@ -276,7 +276,7 @@ jobs:
   style:
     name: Style
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v1
