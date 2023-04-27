@@ -37,6 +37,5 @@ cmake --build . --target install --config Release -- /maxcpucount:8
 Rem move Library\sdk\Python Lib
 move %LIBRARY_PREFIX%\sdk\Python  %LIBRARY_PREFIX%\..\Lib
 cd %LIBRARY_PREFIX%\..\Lib
-Rem python setup_win_python38.py conda
 python setup.py install
 
