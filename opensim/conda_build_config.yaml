@@ -6,11 +6,11 @@ python:
 numpy:
   - 1.21
 c_compiler:
-  - vs2022 # [win]
+  - vs2019 # [win]
   - clang # [osx]
   - gcc  # [linux]
 cxx_compiler:
-  - vs2022 # [win]
+  - vs2019 # [win]
   - clangxx # [osx]
   - gxx # [linux]
 c_compiler_version:
