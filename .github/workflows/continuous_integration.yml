@@ -123,7 +123,7 @@ jobs:
         
     - name: Install numpy
       #Need numpy to use SWIG numpy typemaps.
-      run: python -m pip install numpy==1.21
+      run: python -m pip install numpy==1.23
 
     - uses: conda-incubator/setup-miniconda@v2
       with:
@@ -140,8 +140,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-4.4-py311np121.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py311np121.tar.bz2
+        name: win64-opensim-4.4-py311np123.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py311np123.tar.bz2
   mac:
     name: Mac
 
