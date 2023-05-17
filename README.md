@@ -7,3 +7,4 @@ Usage:
     conda build opensim
     
 Only python 3 is supported. Default settings/package doesn't include Moco
+Packages with Moco are in a separate opensim-with-moco packages
