@@ -142,36 +142,6 @@ jobs:
       with:
         name: win64-opensim-4.4-py311np123.tar.bz2
         path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py311np123.tar.bz2
-  mac:
-    name: Mac
-
-    runs-on: macos-10.15
-
-    steps:
-    - uses: actions/checkout@v1
-
-    - name: Install Homebrew packages
-      # Save the gfortran version to a file so we can use it in the cache key.
-      run: |
-        brew install cmake pkgconfig autoconf libtool automake wget pcre doxygen python@3.8
-        brew reinstall gcc
-        pip3 install numpy==1.20.2
-        gfortran -v
-        mkdir gfortran_version
-        gfortran -v &> gfortran_version/gfortran_version.txt
-
-    - uses: conda-incubator/setup-miniconda@v2
-      with:
-        auto-update-conda: true
-        miniconda-version: "latest"
-
-    - name: Install conda-build
-      run: conda install conda-build
-
-    - name: Conda build
-      run: |
-        cd $GITHUB_WORKSPACE
-        conda build .
 
   ubuntu38:
     runs-on: ubuntu-20.04
