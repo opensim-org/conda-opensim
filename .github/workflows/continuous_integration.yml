@@ -128,7 +128,7 @@ jobs:
 
       - name: Conda build
         run: |
-          cd $GITHUB_WORKSPACE/opensim
+          cd $GITHUB_WORKSPACE
           conda build opensim
           
       - name: upload artifact ubuntu310
