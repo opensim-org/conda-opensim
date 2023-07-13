@@ -13,7 +13,7 @@ on:
       - master
 jobs:
 
-  windows31011:
+  windows310:
     runs-on: windows-latest
 
     steps:
@@ -38,21 +38,48 @@ jobs:
     - name: Conda build
       run: |
         chdir $env:GITHUB_WORKSPACE
-        conda build opensim
+        conda build .
 
-    - name: upload artifact 310
+    - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: win64-opensim-4.4-py310np121.tar.bz2
         path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py310np121.tar.bz2
+
+  windows311:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install Python packages
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
         
-    - name: upload artifact 311
+    - name: Install numpy
+      #Need numpy to use SWIG numpy typemaps.
+      run: python -m pip install numpy==1.23
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        miniconda-version: "latest"
+    - name: Install conda-build
+      run: conda install conda-build
+
+    - name: Conda build
+      run: |
+        chdir $env:GITHUB_WORKSPACE
+        conda build .
+
+    - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: win64-opensim-4.4-py311np123.tar.bz2
         path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4-py311np123.tar.bz2
 
-  windows31011-moco:
+  windows310-moco:
     runs-on: windows-latest
 
     steps:
@@ -79,19 +106,46 @@ jobs:
         chdir $env:GITHUB_WORKSPACE
         conda build opensim-moco
 
-    - name: upload artifact 310-moco
+    - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: win64-opensim-moco-4.4-py310np121.tar.bz2
         path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.4-py310np121.tar.bz2
+
+  windows311-moco:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install Python packages
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
         
-    - name: upload artifact 311-moco
+    - name: Install numpy
+      #Need numpy to use SWIG numpy typemaps.
+      run: python -m pip install numpy==1.23
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        auto-update-conda: true
+        miniconda-version: "latest"
+    - name: Install conda-build
+      run: conda install conda-build
+
+    - name: Conda build
+      run: |
+        chdir $env:GITHUB_WORKSPACE
+        conda build opensim-moco
+
+    - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: win64-opensim-moco-4.4-py311np123.tar.bz2
         path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.4-py311np123.tar.bz2
-        
-  ubuntu31011:
+
+  ubuntu310:
     runs-on: ubuntu-20.04
 
     steps:
@@ -128,22 +182,62 @@ jobs:
 
       - name: Conda build
         run: |
-          cd $GITHUB_WORKSPACE
-          conda build opensim
+          cd $GITHUB_WORKSPACE/opensim
+          conda build .
           
-      - name: upload artifact ubuntu310
+      - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: linux64-opensim-4.4-py310np121.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py310np121.tar.bz2
+
+  ubuntu311:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: '3.11'
+          channels: conda-forge,defaults
+          miniconda-version: "latest"
+
+      - name: Install Python packages
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+        
+      - name: Install numpy
+        #Need numpy to use SWIG numpy typemaps.
+        run: python3 -m pip install numpy==1.23
+
+      - name: Install packages
+        run: sudo apt-get update && sudo apt-get install --yes build-essential libtool autoconf pkg-config gfortran libopenblas-dev liblapack-dev freeglut3-dev libxi-dev libxmu-dev doxygen python3 python3-dev python3-numpy python3-setuptools
+
+      - name: Install SWIG
+        run: |
+          mkdir ~/swig-source && cd ~/swig-source
+          wget https://github.com/swig/swig/archive/refs/tags/rel-4.0.2.tar.gz
+          tar xzf rel-4.0.2.tar.gz && cd swig-rel-4.0.2
+          sh autogen.sh && ./configure --prefix=$HOME/swig --disable-ccache
+          make && make -j4 install
+
+      - name: Install conda-build
+        run: conda install conda-build
+
+      - name: Conda build
+        run: |
+          cd $GITHUB_WORKSPACE/opensim
+          conda build .
           
-      - name: upload artifact ubuntu311
+      - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: linux64-opensim-4.4-py311np123.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4-py311np123.tar.bz2
-  
-  ubuntu31011-moco:
+
+  ubuntu310-moco:
     runs-on: ubuntu-20.04
 
     steps:
@@ -180,16 +274,56 @@ jobs:
 
       - name: Conda build
         run: |
-          cd $GITHUB_WORKSPACE
-          conda build opensim-moco
+          cd $GITHUB_WORKSPACE/opensim-moco
+          conda build .
           
-      - name: upload artifact ubuntu310-moco
+      - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: linux64-opensim-moco-4.4-py310np121.tar.bz2
           path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.4-py310np121.tar.bz2
+
+  ubuntu311-moco:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: '3.11'
+          channels: conda-forge,defaults
+          miniconda-version: "latest"
+
+      - name: Install Python packages
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+        
+      - name: Install numpy
+        #Need numpy to use SWIG numpy typemaps.
+        run: python3 -m pip install numpy==1.23
+
+      - name: Install packages
+        run: sudo apt-get update && sudo apt-get install --yes build-essential libtool autoconf pkg-config gfortran libopenblas-dev liblapack-dev freeglut3-dev libxi-dev libxmu-dev doxygen python3 python3-dev python3-numpy python3-setuptools
+
+      - name: Install SWIG
+        run: |
+          mkdir ~/swig-source && cd ~/swig-source
+          wget https://github.com/swig/swig/archive/refs/tags/rel-4.0.2.tar.gz
+          tar xzf rel-4.0.2.tar.gz && cd swig-rel-4.0.2
+          sh autogen.sh && ./configure --prefix=$HOME/swig --disable-ccache
+          make && make -j4 install
+
+      - name: Install conda-build
+        run: conda install conda-build
+
+      - name: Conda build
+        run: |
+          cd $GITHUB_WORKSPACE/opensim-moco
+          conda build .
           
-      - name: upload artifact ubuntu311-moco
+      - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: linux64-opensim-moco-4.4-py311np123.tar.bz2
