@@ -38,7 +38,7 @@ jobs:
     - name: Conda build
       run: |
         chdir $env:GITHUB_WORKSPACE
-        conda build .
+        conda build . --python=3.10
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
@@ -71,7 +71,7 @@ jobs:
     - name: Conda build
       run: |
         chdir $env:GITHUB_WORKSPACE
-        conda build .
+        conda build . --python=3.11
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
@@ -104,7 +104,7 @@ jobs:
     - name: Conda build
       run: |
         chdir $env:GITHUB_WORKSPACE
-        conda build opensim-moco
+        conda build opensim-moco --python=3.10
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
@@ -137,7 +137,7 @@ jobs:
     - name: Conda build
       run: |
         chdir $env:GITHUB_WORKSPACE
-        conda build opensim-moco
+        conda build opensim-moco --python=3.11
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
@@ -183,7 +183,7 @@ jobs:
       - name: Conda build
         run: |
           cd $GITHUB_WORKSPACE/opensim
-          conda build .
+          conda build . --python=3.10
           
       - name: upload artifact
         uses: actions/upload-artifact@v2
@@ -229,7 +229,7 @@ jobs:
       - name: Conda build
         run: |
           cd $GITHUB_WORKSPACE/opensim
-          conda build .
+          conda build . --python=3.11
           
       - name: upload artifact
         uses: actions/upload-artifact@v2
@@ -275,7 +275,7 @@ jobs:
       - name: Conda build
         run: |
           cd $GITHUB_WORKSPACE/opensim-moco
-          conda build .
+          conda build . --python=3.10
           
       - name: upload artifact
         uses: actions/upload-artifact@v2
@@ -321,7 +321,7 @@ jobs:
       - name: Conda build
         run: |
           cd $GITHUB_WORKSPACE/opensim-moco
-          conda build .
+          conda build . --python=3.11
           
       - name: upload artifact
         uses: actions/upload-artifact@v2
