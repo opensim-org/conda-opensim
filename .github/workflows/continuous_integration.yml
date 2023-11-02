@@ -172,8 +172,8 @@ jobs:
       - name: Install SWIG
         run: |
           mkdir ~/swig-source && cd ~/swig-source
-          wget https://github.com/swig/swig/archive/refs/tags/rel-4.1.1.tar.gz
-          tar xzf rel-4.1.1.tar.gz && cd swig-rel-4.1.1
+          wget https://github.com/swig/swig/archive/refs/tags/rel-4.0.2.tar.gz
+          tar xzf rel-4.0.2.tar.gz && cd swig-rel-4.0.2
           sh autogen.sh && ./configure --prefix=$HOME/swig --disable-ccache
           make && make -j4 install
 
@@ -218,8 +218,8 @@ jobs:
       - name: Install SWIG
         run: |
           mkdir ~/swig-source && cd ~/swig-source
-          wget https://github.com/swig/swig/archive/refs/tags/rel-4.1.1.tar.gz
-          tar xzf rel-4.1.1.tar.gz && cd swig-rel-4.1.1
+          wget https://github.com/swig/swig/archive/refs/tags/rel-4.0.2.tar.gz
+          tar xzf rel-4.0.2.tar.gz && cd swig-rel-4.0.2
           sh autogen.sh && ./configure --prefix=$HOME/swig --disable-ccache
           make && make -j4 install
 
@@ -264,8 +264,8 @@ jobs:
       - name: Install SWIG
         run: |
           mkdir ~/swig-source && cd ~/swig-source
-          wget https://github.com/swig/swig/archive/refs/tags/rel-4.1.1.tar.gz
-          tar xzf rel-4.1.1.tar.gz && cd swig-rel-4.1.1
+          wget https://github.com/swig/swig/archive/refs/tags/rel-4.0.2.tar.gz
+          tar xzf rel-4.0.2.tar.gz && cd swig-rel-4.0.2
           sh autogen.sh && ./configure --prefix=$HOME/swig --disable-ccache
           make && make -j4 install
 
@@ -310,8 +310,8 @@ jobs:
       - name: Install SWIG
         run: |
           mkdir ~/swig-source && cd ~/swig-source
-          wget https://github.com/swig/swig/archive/refs/tags/rel-4.1.1.tar.gz
-          tar xzf rel-4.1.1.tar.gz && cd swig-rel-4.1.1
+          wget https://github.com/swig/swig/archive/refs/tags/rel-4.0.2.tar.gz
+          tar xzf rel-4.0.2.tar.gz && cd swig-rel-4.0.2
           sh autogen.sh && ./configure --prefix=$HOME/swig --disable-ccache
           make && make -j4 install
 
