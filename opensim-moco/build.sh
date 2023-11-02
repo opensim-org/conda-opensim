@@ -18,7 +18,7 @@ cmake ../dependencies/ -LAH \
 make -j8
 cd ..
 
-# cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
+cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
 
 if [ "$(uname)" == "Darwin" ]; then
    SWIG_DIR_SPEC=/usr/local/Cellar/swig/4.0.2
