@@ -2,15 +2,13 @@ name: continuous-integration
 
 # syntax https://help.github.com/en/articles/workflow-syntax-for-github-actions
 on:
-  # Run at 2am every night.
-  schedule:
-    - cron: '0 2 * * *'
   pull_request:
     branches:
       - '*'
   push:
     branches:
       - master
+
 jobs:
 
   windows310:
