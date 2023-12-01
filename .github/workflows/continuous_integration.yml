@@ -41,8 +41,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-4.4.9-py310np121.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4.9-py310np121.tar.bz2
+        name: win64-opensim-4.5-py310np121.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.5-py310np121.tar.bz2
 
   windows311:
     runs-on: windows-latest
@@ -74,8 +74,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-4.4.9-py311np123.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.4.9-py311np123.tar.bz2
+        name: win64-opensim-4.5-py311np123.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-4.5-py311np123.tar.bz2
 
   windows310-moco:
     runs-on: windows-latest
@@ -107,8 +107,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-moco-4.4.9-py310np121.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.4.9-py310np121.tar.bz2
+        name: win64-opensim-moco-4.5-py310np121.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.5-py310np121.tar.bz2
 
   windows311-moco:
     runs-on: windows-latest
@@ -140,8 +140,8 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: win64-opensim-moco-4.4.9-py311np123.tar.bz2
-        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.4.9-py311np123.tar.bz2
+        name: win64-opensim-moco-4.5-py311np123.tar.bz2
+        path: C:/Miniconda3/envs/test/conda-bld/win-64/opensim-moco-4.5-py311np123.tar.bz2
 
   ubuntu310:
     runs-on: ubuntu-20.04
@@ -186,8 +186,8 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linux64-opensim-4.4.9-py310np121.tar.bz2
-          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4.9-py310np121.tar.bz2
+          name: linux64-opensim-4.5-py310np121.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.5-py310np121.tar.bz2
 
   ubuntu311:
     runs-on: ubuntu-20.04
@@ -232,8 +232,8 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linux64-opensim-4.4.9-py311np123.tar.bz2
-          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.4.9-py311np123.tar.bz2
+          name: linux64-opensim-4.5-py311np123.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-4.5-py311np123.tar.bz2
 
   ubuntu310-moco:
     runs-on: ubuntu-20.04
@@ -278,8 +278,8 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linux64-opensim-moco-4.4.9-py310np121.tar.bz2
-          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.4.9-py310np121.tar.bz2
+          name: linux64-opensim-moco-4.5-py310np121.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.5-py310np121.tar.bz2
 
   ubuntu311-moco:
     runs-on: ubuntu-20.04
@@ -324,8 +324,8 @@ jobs:
       - name: upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: linux64-opensim-moco-4.4.9-py311np123.tar.bz2
-          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.4.9-py311np123.tar.bz2
+          name: linux64-opensim-moco-4.5-py311np123.tar.bz2
+          path: /usr/share/miniconda3/conda-bld/linux-64/opensim-moco-4.5-py311np123.tar.bz2
 
   style:
     name: Style
