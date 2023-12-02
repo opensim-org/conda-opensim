@@ -1,7 +1,7 @@
 {% set version = "4.5" %}
 
 package:
-    name: opensim
+    name: opensim-moco
     version: {{ version }}
 
 source:
@@ -38,8 +38,8 @@ requirements:
         - openblas # [not win]
 
 test:
-   imports:
-    - opensim
+    imports:
+     - opensim
     
 about:
     home: http://opensim.stanford.edu
