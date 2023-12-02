@@ -35,7 +35,7 @@ jobs:
 
     - name: Conda build
       run: |
-        chdir $env:GITHUB_WORKSPACE
+        chdir $env:GITHUB_WORKSPACE/opensim
         conda build . --python=3.10
 
     - name: upload artifact
@@ -68,7 +68,7 @@ jobs:
 
     - name: Conda build
       run: |
-        chdir $env:GITHUB_WORKSPACE
+        chdir $env:GITHUB_WORKSPACE/opensim
         conda build . --python=3.11
 
     - name: upload artifact
