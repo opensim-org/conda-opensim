@@ -1,4 +1,4 @@
-{% set version = "4.5" %}
+{% set version = "4.5.1" %}
 
 package:
     name: opensim-moco
@@ -6,7 +6,7 @@ package:
 
 source:
     git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: opensim_45
+    git_rev: upgrade_ipopt
 build:
     number: 1
     # NOTE : For C++11 builds, vc16/VS 2019 are the only acceptable targets
@@ -22,12 +22,13 @@ requirements:
     build:
         - toolchain 2.4.0 0     # [win]
         #- wheel 0.36.2 pyhd3eb1b0_0
-        - swig 4.0.2
+        - swig >=4.0.2
         - cmake >=3.15,<3.25
         - numpy {{ numpy }}
         - python {{ python }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - {{ compiler('fortran')}}
         - openblas # [not win]
         - make # [not win]
 
