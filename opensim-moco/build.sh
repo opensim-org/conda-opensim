@@ -21,7 +21,7 @@ cd ..
 # cp -r $PREFIX/simbody/libexec/simbody/* $PREFIX/bin/
 
 if [ "$(uname)" == "Darwin" ]; then
-   SWIG_DIR_SPEC=/usr/local/Cellar/swig/4.0.2
+   SWIG_DIR_SPEC=/usr/local/Cellar/swig/4.1.1
 else
    SWIG_DIR_SPEC=~/swig/share/swig 
 fi
