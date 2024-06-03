@@ -8,9 +8,8 @@ on:
   push:
     branches:
       - master
-
+      
 jobs:
-
   windows310:
     runs-on: windows-latest
 
