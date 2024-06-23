@@ -22,15 +22,15 @@ requirements:
     build:
         - toolchain 2.4.0 0     # [win]
         #- wheel 0.36.2 pyhd3eb1b0_0
-        - swig 4.1.1
-        - cmake >=3.15,<3.25
+        # - swig 4.1.1
+        - {{ compiler("cxx") }}
+        - {{ compiler('fortran') }}  
+        - cmake
         - numpy {{ numpy }}
         - python {{ python }}
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - openblas # [not win]
         - make # [not win]
-
+ 
     run:
         - numpy {{ numpy }}
         - python {{ python }}
