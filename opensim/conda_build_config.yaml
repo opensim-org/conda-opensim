@@ -1,11 +1,7 @@
-MACOSX_DEPLOYMENT_TARGET: '10.10'
+MACOSX_DEPLOYMENT_TARGET: '12'
 python:
-  - 3.9
   - 3.10
-  - 3.11
 numpy:
-  - 1.25.*
-  - 1.25.*
   - 1.25.*
 zip_keys:
   - python
@@ -18,10 +14,4 @@ cxx_compiler:
   - vs2019 # [win]
   - clangxx # [osx]
   - gxx # [linux]
-c_compiler_version:
-  - 7.5.0  # [linux]
-cxx_compiler_version:
-  - 7.5.0  # [linux]
-CONDA_BUILD_SYSROOT:
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
 
