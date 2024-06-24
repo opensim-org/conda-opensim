@@ -23,7 +23,7 @@ cd ..
 if [ "$(uname)" == "Darwin" ]; then
    SWIG_DIR_SPEC=/usr/local/Cellar/swig/4.1.1
 else
-   SWIG_DIR_SPEC=/usr/local/bin/swig 
+   SWIG_DIR_SPEC=/home/runner/swig/
 fi
 # TODO: Tests are missing!
 mkdir opensim_build
@@ -36,7 +36,7 @@ cmake ../ \
       -DCMAKE_OSX_SYSROOT=${CONDA_BUILD_SYSROOT} \
       -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 \
       -DSWIG_DIR=${SWIG_DIR_SPEC} \
-      -DSWIG_EXECUTABLE=/usr/local/bin/swig \
+      -DSWIG_EXECUTABLE=/home/runner/swig/bin/swig \
       -DBUILD_PYTHON_WRAPPING=ON \
       -DOPENSIM_DISABLE_LOG_FILE=ON \
       -DOPENSIM_C3D_PARSER=ezc3d \
