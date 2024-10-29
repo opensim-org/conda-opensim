@@ -31,7 +31,8 @@ cmake ..\^
 	-DBUILD_TESTING=OFF^
 	-DBUILD_API_EXAMPLES=OFF^
 	-DOPENSIM_BUILD_INDIVIDUAL_APPS=ON^
-	-DOPENSIM_PYTHON_CONDA=ON
+	-DOPENSIM_PYTHON_CONDA=ON^
+	-DSWIG_EXECUTABLE="C:/ProgramData/chocolatey/bin/swig.exe"
 
 cmake --build . --target install --config Release -- /maxcpucount:8
 
