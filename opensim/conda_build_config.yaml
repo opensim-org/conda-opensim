@@ -1,7 +1,6 @@
 MACOSX_DEPLOYMENT_TARGET: '12'
 python:
   - 3.10
-
 numpy:
   - 1.25
 

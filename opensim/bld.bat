@@ -4,8 +4,8 @@ cmake ..\dependencies^
 	-G"Visual Studio 17 2022"^
 	-DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"^
 	-DSUPERBUILD_ezc3d=ON^
-	-DOPENSIM_WITH_TROPTER=OFF^
-	-DOPENSIM_WITH_CASADI=OFF
+	-DOPENSIM_WITH_TROPTER=ON^
+	-DOPENSIM_WITH_CASADI=ON
 
 cmake --build . --config Release -- /maxcpucount:8
 cd .. 
@@ -26,12 +26,14 @@ cmake ..\^
 	-DBUILD_PYTHON_WRAPPING=ON^
 	-DOPENSIM_C3D_PARSER=ezc3d^
 	-DOPENSIM_PYTHON_STANDALONE=ON^
-	-DOPENSIM_WITH_CASADI=OFF^
+	-DOPENSIM_WITH_CASADI=ON^
 	-DOPENSIM_WITH_TROPTER=OFF^
 	-DBUILD_TESTING=OFF^
 	-DBUILD_API_EXAMPLES=OFF^
 	-DOPENSIM_BUILD_INDIVIDUAL_APPS=ON^
-	-DOPENSIM_PYTHON_CONDA=ON
+	-DOPENSIM_PYTHON_CONDA=ON^
+	-DSWIG_EXECUTABLE="D:/dev/tools/swigwin-4.1.1/swig.exe"
+
 cmake --build . --target install --config Release -- /maxcpucount:8
 
 Rem move Library\sdk\Python Lib

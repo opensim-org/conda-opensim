@@ -1,4 +1,4 @@
-{% set version = "4.5.1" %}
+{% set version = "4.5.99" %}
 
 package:
     name: opensim
@@ -50,4 +50,3 @@ about:
 extra:
     recipe-maintainers:
         - aymanhab
-        - kidzik
