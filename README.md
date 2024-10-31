@@ -1,5 +1,5 @@
 # conda-opensim
-Conda recipe for OpenSim 4.4
+Conda recipe for opensim packages
 
 Usage:
 
@@ -7,4 +7,4 @@ Usage:
     conda build opensim
     
 Only python 3 is supported. Default settings/package doesn't include Moco
-Packages with Moco are in a separate opensim-with-moco packages
+Packages come with Moco and have version number ending in .99 for dev builds
