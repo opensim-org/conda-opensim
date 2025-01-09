@@ -27,6 +27,7 @@ requirements:
         - python {{ python }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - {{ compiler('fortran') }} # [not win]
         - openblas # [not win]
         - make # [not win]
 

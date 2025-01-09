@@ -16,3 +16,6 @@ cxx_compiler:
   - vs2019 # [win]
   - clangxx # [osx]
   - gxx # [linux]
+fortran_compiler:
+  - gfortran # [linux]
+  
