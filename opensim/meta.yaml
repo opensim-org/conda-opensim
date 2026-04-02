@@ -1,4 +1,4 @@
-{% set version = "4.5.2" %}
+{% set version = "4.6" %}
 
 package:
     name: opensim
@@ -6,8 +6,9 @@ package:
 
 source:
     git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: main
+    git_rev: opensim_46 
     git_depth: 1
+
 build:
     number: 1
     # NOTE : For C++11 builds, vc16/VS 2019 are the only acceptable targets
@@ -20,6 +21,9 @@ build:
 requirements:
     host:
         - openblas # [not win]
+        - numpy {{ numpy }}
+        - python {{ python }}
+
     build:
         - toolchain 2.4.0 0     # [win]
         #- wheel 0.36.2 pyhd3eb1b0_0
@@ -30,12 +34,14 @@ requirements:
         - {{ compiler('cxx') }}
         - openblas # [not win]
         - make # [not win]
+        - gfortran # [osx]
 
     run:
         - numpy {{ numpy }}
         - python {{ python }}
         - freeglut # [win]
         - openblas # [not win]
+        - gfortran # [osx]
 
 test:
    imports:
