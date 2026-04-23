@@ -1,4 +1,4 @@
-{% set version = "4.5.2" %}
+{% set version = "4.6.0" %}
 
 package:
     name: opensim
@@ -6,12 +6,12 @@ package:
 
 source:
     git_url: https://github.com/opensim-org/opensim-core.git
-    git_rev: 4.5.2
+    git_rev: opensim_46
 build:
     number: 1
-    # NOTE : For C++11 builds, vc16/VS 2019 are the only acceptable targets
+    # NOTE : For C++11 builds, vc17/VS 2022 are the only acceptable targets
     features:
-        - vc16                # [win and py39]
+        - vc17                # [win and py311]
     # NOTE : This is needed to ensure the paths to Simbody's binaries, like
     # simbody-visualizer, are corrected.
     detect_binary_files_with_prefix: true
@@ -22,7 +22,7 @@ requirements:
     build:
         - toolchain 2.4.0 0     # [win]
         #- wheel 0.36.2 pyhd3eb1b0_0
-        - cmake >=3.15,<3.25
+        - cmake >=4.0,<4.2
         - numpy {{ numpy }}
         - python {{ python }}
         - {{ compiler('c') }}

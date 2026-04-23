@@ -1,18 +1,18 @@
 MACOSX_DEPLOYMENT_TARGET: '12'
 python:
-  - 3.10
+  - 3.11
 numpy:
-  - 1.25
+  - 2.4.*
 
 zip_keys:
   - python
   - numpy
 
 c_compiler:
-  - vs2019 # [win]
+  - vs2022 # [win]
   - clang # [osx]
   - gcc  # [linux]
 cxx_compiler:
-  - vs2019 # [win]
+  - vs2022 # [win]
   - clangxx # [osx]
   - gxx # [linux]
